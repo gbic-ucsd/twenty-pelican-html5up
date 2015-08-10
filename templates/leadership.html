@@ -1,0 +1,29 @@
+<!-- <section class="wrapper style3 container special"> -->
+
+{% extends "page.html" %}
+{% block content %}
+
+
+
+
+  {% for person in people %}
+    {%- if loop.index0 % 4 == 0 -%}
+      <div class="row">
+    {%- endif %}
+    <li><a href="{{ user.url }}">{{ person.username }}</a></li>
+      <div class="3u">
+        <section>
+          <a href="#" class="image feature"><img src="{{ person.image }}" alt="{{ person.position }}"/></a>
+          <header>
+            <h3>{{ person.position }}</h3>
+          </header>
+          <p>{{ person.summary }}</p>
+        </section>
+      </div>
+    {%- if loop.index0 % 4 == 3 or loop.last -%}
+      </div>
+    {%- endif %}
+  {% endfor %}
+{% content %}
+
+
